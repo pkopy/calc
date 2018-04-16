@@ -7,6 +7,7 @@ public class Menu {
     private RootsNumber roots;
     private OctalConverter octal;
     private Logarithm logarithm;
+    private SinCos sinCos;
 
     public Menu() {
         scanner = new Scanner(System.in);
@@ -15,10 +16,12 @@ public class Menu {
         roots = new RootsNumber();
         octal = new OctalConverter();
         logarithm = new Logarithm();
+        sinCos = new SinCos();
     }
 
     public void start() {
         System.out.println("Calculator ver 1.0");
+
 
         String answer;
 
@@ -70,10 +73,6 @@ public class Menu {
                 System.out.println("Podaj stopień pierwiastka oraz liczbę oddzielone przecinkiem:");
                 double[] args =(SimpleMath.changeStringToArray(scanner.nextLine(), ","));
                 System.out.println(roots.rootsNumber(args));
-//                int degree = Integer.valueOf(scanner.nextLine());
-//                System.out.println("Podaj liczbę");
-//                int root = Integer.valueOf(scanner.nextLine());
-//                System.out.println(roots.rootsNumber(root, degree));
                 break;
             }
             case "7": {
@@ -82,6 +81,21 @@ public class Menu {
                 System.out.println(logarithm.logarithm(args));
                 break;
             }
+
+            case "8": {
+                System.out.println("Podaj kąt");
+                System.out.println(sinCos.sin(Double.valueOf(scanner.nextLine())));
+                break;
+            }
+            case "9": {
+                System.out.println("Podaj kąt");
+                System.out.println(sinCos.cos(Double.valueOf(scanner.nextLine())));
+                break;
+            }
+            default: {
+                System.out.println("Nie ma takiej komendy");
+            }
+
         }
 
     }
@@ -95,6 +109,8 @@ public class Menu {
         System.out.println("5 - zamiana typu binarnego na ósemkowy");
         System.out.println("6 - pierwiastek x z liczby y");
         System.out.println("7 - logarytm z x o podstawie a");
+        System.out.println("8 - sinus kąta");
+        System.out.println("9 - cosinus kąta");
 
     }
 

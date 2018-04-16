@@ -2,7 +2,6 @@ public class Logarithm {
 
     public double logarithm(double... args) {
         if (args[0] > 1 && args[1] > 0) {
-            int count = 0;
 
             for (int i = 2; i < args[1]; i++) {
                 int result = 1;
@@ -37,5 +36,5 @@ public class Logarithm {
         return 0;
     }
 
-//    public double
+
 }
