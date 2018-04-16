@@ -7,7 +7,7 @@ public class Menu {
     private RootsNumber roots;
     private OctalConverter octal;
 
-    public Menu(){
+    public Menu() {
         scanner = new Scanner(System.in);
         simpleMath = new SimpleMath();
         binary = new BinaryConverter();
@@ -20,20 +20,20 @@ public class Menu {
 
         String answer;
 
-        do{
+        do {
 
             System.out.println("Wybierz opcję: ");
             printChoseList();
             checkAnswer(answer = scanner.nextLine());
 
-        }while(!answer.equalsIgnoreCase("exit"));
+        } while (!answer.equalsIgnoreCase("exit"));
     }
 
     private void checkAnswer(String answer) {
         switch (answer) {
             case "1": {
                 System.out.println("Podaj liczby które chcesz pomnożyć oddzielone przecinkiem:");
-                simpleMath.changeStringToArray(scanner.nextLine(), ",");
+                SimpleMath.changeStringToArray(scanner.nextLine(), ",");
                 System.out.println(simpleMath.multiply(simpleMath.getMultiplyArgs()));
 
                 break;
@@ -41,16 +41,14 @@ public class Menu {
 
             case "2": {
                 System.out.println("Podaj dzielną i dzielnik oddzielone przecinkiem:");
-                simpleMath.changeStringToArray(scanner.nextLine(),",");
+                SimpleMath.changeStringToArray(scanner.nextLine(), ",");
                 System.out.println(simpleMath.divine(simpleMath.getMultiplyArgs()));
                 break;
-
-
             }
 
             case "3": {
                 System.out.println("Podaj liczbe do konwersji");
-                System.out.println(binary.changeToBinar(Integer.valueOf(scanner.nextLine())));
+                System.out.println(binary.changeToBinary(Integer.valueOf(scanner.nextLine())));
                 break;
             }
 
@@ -67,11 +65,13 @@ public class Menu {
             }
 
             case "6": {
-                System.out.println("Podaj stopień pierwiastka");
-                int degree = Integer.valueOf(scanner.nextLine());
-                System.out.println("Podaj liczbę");
-                int root = Integer.valueOf(scanner.nextLine());
-                System.out.println(roots.rootsNumber(root, degree));
+                System.out.println("Podaj stopień pierwiastka oraz liczbę oddzielone przecinkiem:");
+                double[] args =(SimpleMath.changeStringToArray(scanner.nextLine(), ","));
+                System.out.println(roots.rootsNumber(args));
+//                int degree = Integer.valueOf(scanner.nextLine());
+//                System.out.println("Podaj liczbę");
+//                int root = Integer.valueOf(scanner.nextLine());
+//                System.out.println(roots.rootsNumber(root, degree));
                 break;
             }
         }
