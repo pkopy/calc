@@ -1,14 +1,6 @@
 public class BinaryConverter {
-//    private String result;
-//    private int test;
 
-
-    public BinaryConverter() {
-
-
-    }
-
-    public String changeToBinar(int number) {
+    public String changeToBinary(int number) {
         String result = "";
         do {
             int i = number % 2;
@@ -18,7 +10,6 @@ public class BinaryConverter {
         if (number % 2 == 1) {
             result += 1;
         }
-
 
         return reverseString(result);
     }

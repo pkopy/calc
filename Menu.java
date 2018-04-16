@@ -6,6 +6,7 @@ public class Menu {
     private BinaryConverter binary;
     private RootsNumber roots;
     private OctalConverter octal;
+    private Logarithm logarithm;
 
     public Menu() {
         scanner = new Scanner(System.in);
@@ -13,6 +14,7 @@ public class Menu {
         binary = new BinaryConverter();
         roots = new RootsNumber();
         octal = new OctalConverter();
+        logarithm = new Logarithm();
     }
 
     public void start() {
@@ -33,16 +35,16 @@ public class Menu {
         switch (answer) {
             case "1": {
                 System.out.println("Podaj liczby które chcesz pomnożyć oddzielone przecinkiem:");
-                SimpleMath.changeStringToArray(scanner.nextLine(), ",");
-                System.out.println(simpleMath.multiply(simpleMath.getMultiplyArgs()));
+                double[] args = SimpleMath.changeStringToArray(scanner.nextLine(), ",");
+                System.out.println(simpleMath.multiply(args));
 
                 break;
             }
 
             case "2": {
                 System.out.println("Podaj dzielną i dzielnik oddzielone przecinkiem:");
-                SimpleMath.changeStringToArray(scanner.nextLine(), ",");
-                System.out.println(simpleMath.divine(simpleMath.getMultiplyArgs()));
+                double[] args = SimpleMath.changeStringToArray(scanner.nextLine(), ",");
+                System.out.println(simpleMath.divine(args));
                 break;
             }
 
@@ -74,6 +76,12 @@ public class Menu {
 //                System.out.println(roots.rootsNumber(root, degree));
                 break;
             }
+            case "7": {
+                System.out.println("Podaj podstawę oraz liczbę oddzielone przecinkiem:");
+                double[] args =(SimpleMath.changeStringToArray(scanner.nextLine(), ","));
+                System.out.println(logarithm.logarithm(args));
+                break;
+            }
         }
 
     }
@@ -86,6 +94,7 @@ public class Menu {
         System.out.println("4 - zamiana typu binarnego na dziesiętny,");
         System.out.println("5 - zamiana typu binarnego na ósemkowy");
         System.out.println("6 - pierwiastek x z liczby y");
+        System.out.println("7 - logarytm z x o podstawie a");
 
     }
 

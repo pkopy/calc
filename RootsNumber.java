@@ -1,11 +1,7 @@
 public class RootsNumber {
 
 
-    public RootsNumber(){
-
-    }
-
-    public double rootsNumber( double x, double y) {
-        return Math.pow(x, 1/y);
+    public double rootsNumber(double... args) {
+        return Math.pow(args[1], 1/args[0]);
     }
 }
