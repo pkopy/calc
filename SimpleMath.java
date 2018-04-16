@@ -1,10 +1,10 @@
 import java.util.Arrays;
 
-public class MenuLogic {
+public class SimpleMath {
 
     private double[] multiplyArgs;
 
-    public MenuLogic() {
+    public SimpleMath() {
 
     }
 
